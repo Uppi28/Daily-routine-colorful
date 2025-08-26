@@ -1,0 +1,161 @@
+/* iOS Safari Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+  .app {
+    /* iOS safe area handling */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    /* iOS viewport height fix */
+    min-height: -webkit-fill-available;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    /* iOS safe area handling */
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+  
+  .loading-container {
+    /* iOS safe area handling */
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-top: max(20px, env(safe-area-inset-top));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    /* iOS viewport height fix */
+    min-height: -webkit-fill-available;
+    min-height: 100vh;
+  }
+}
+
+/* iOS Safari Mobile Optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 812px) {
+  .app {
+    /* iPhone X and newer safe area handling */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .main-content {
+    /* iPhone-specific padding */
+    padding: max(12px, env(safe-area-inset-left) + 8px) max(12px, env(safe-area-inset-right) + 8px) max(12px, env(safe-area-inset-bottom) + 8px);
+  }
+  
+  .loading-container {
+    /* iPhone-specific padding */
+    padding: max(20px, env(safe-area-inset-left) + 15px) max(20px, env(safe-area-inset-right) + 15px) max(20px, env(safe-area-inset-top) + 15px) max(20px, env(safe-area-inset-bottom) + 15px);
+  }
+  
+  .loading-spinner {
+    /* iPhone-specific sizing */
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1.2;
+  }
+  
+  .loading-container p {
+    /* iPhone-specific text sizing */
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+    line-height: 1.4;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.main-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.loading-spinner {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: spin 1s linear infinite;
+}
+
+.loading-container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.9;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 12px;
+  }
+  
+  .loading-container {
+    padding: 20px;
+  }
+  
+  .loading-spinner {
+    font-size: 3rem;
+  }
+  
+  .loading-container p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 6px;
+  }
+  
+  .loading-container {
+    padding: 15px;
+  }
+  
+  .loading-spinner {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .loading-container p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-content {
+    padding: 4px;
+  }
+  
+  .loading-container {
+    padding: 12px;
+  }
+  
+  .loading-spinner {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .loading-container p {
+    font-size: 0.8rem;
+  }
+}
