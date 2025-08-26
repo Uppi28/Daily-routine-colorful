@@ -2,6 +2,10 @@
 
 A delightful, toonish daily routine app that helps you organize your life with a smile! Built with React, TypeScript, and Firebase for real-time synchronization across devices.
 
+## 🌐 Live Demo
+
+**[🚀 Try the App Live!](https://daily-routine-uppi.web.app/)**
+
 ## ✨ Features
 
 ### 🎯 **Core Functionality**
