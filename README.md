@@ -1,4 +1,4 @@
-# 🎉 Daily Routine Fun App
+# 🎉 [Daily Routine Fun App](`https://daily-routine-uppi.web.app/`)
 
 A delightful, toonish daily routine app that helps you organize your life with a smile! Built with React, TypeScript, and Firebase for real-time synchronization across devices.
 
